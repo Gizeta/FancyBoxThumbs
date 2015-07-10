@@ -6,7 +6,8 @@
             new_img_src,
             img_title,
             is_gallery = $(this).parents('.gallery').length,
-            orig_img_src = $(this).find('img').attr("src");
+            //use data-url when working with lazyload extension, like ext.lazyload
+            orig_img_src = $(this).find('img').attr("data-url") || $(this).find('img').attr("src");
 
         //break up the image link into an array
         img_src_parts = orig_img_src.split("/");
